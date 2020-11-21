@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Ariska</title>
+ <style>
+fieldset{
+  background-color: cyan
+}
+table, th, td {
+  border: 3px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+ 
+  <fieldset>
+    <legend>Kurs Rupiah - Mata Uang Asing:</legend>
+    <table style="width:80%">
+      <tr>
+        <td><label>Masukan Nilai :</label></td>
+        <td><input type="number" id="nilai" value="1" required/></td>
+      </tr>
+      <tr>
+        <td>
+        <label for="exampleFormControlSelect1">Valas</label>
+        </td><td><select class="form-control"  id="uangasing" onchange="konversiuang()">
+          <option value="DOLLAR US">Dollar Us</option>
+          <option value="DOLLAR SINGAPORE">Dollar Singapore</option>
+          <option value="RINGGIT MALAYSIA">Ringgit Malaysia</option>
+          <option value="YEN JEPANG">Yen Jepang</option>             
+          <option value="EURO">Euro</option>
+          <option value="RIYAL ARAB SAUDI">Riyal Arab Saudi</option>
+        </select>
+      </td>
+    </tr>
+      <tr>
+        <td>Nilai Rupiah</td>
+        <td><input type="number" id="rupiah" placeholder=""></td>
+      </tr>
+    </table>
+  </fieldset>
+  <script>
+    function konversiuang()
+    {
+      let uangasinng = document.getElementById("uangasing").value;
+      let input = document.getElementById("nilai").value;
+      if(uangasinng == "DOLLAR US"){
+        hasil = input*9915;
+      }
+      else if(uangasinng == "DOLLAR SINGAPORE"){
+        hasil = input*13472;
+      }
+      else if(uangasinng == "RINGGIT MALAYSIA"){
+        hasil = input*874;
+      }
+      else if(uangasinng == "YEN JEPANG"){
+        hasil = input*120;
+      }
+      else if(uangasinng == "EURO"){
+        hasil = input*15888;
+      }
+      else if(uangasinng == "RIYAL ARAB SAUDI"){
+        hasil = input*3592;
+      }
+      else{
+        hasil = 0;
+      }
+      document.getElementById("rupiah").value = hasil;
+      alert(hasil)
+      }
+      function Kurs()
+    {
+      let uangasinng = document.getElementById("uangasing").value;
+      let input = document.getElementById("nilai").value;
+      if(uangasinng == "DOLLAR US"){
+        hasil = input*9915;
+      }
+      else if(uangasinng == "DOLLAR SINGAPORE"){
+        hasil = input*13472;
+      }
+      else if(uangasinng == "RINGGIT MALAYSIA"){
+        hasil = input*874;
+      }
+      else if(uangasinng == "YEN JEPANG"){
+        hasil = input*120;
+      }
+      else if(uangasinng == "EURO"){
+        hasil = input*15888;
+      }
+      else if(uangasinng == "RIYAL ARAB SAUDI"){
+        hasil = input*3592;
+      }
+      else{
+        hasil = 0;
+      }
+      document.getElementById("rupiah").value = hasil;
+      alert(hasil)
+      }
+  </script>
+</body>
+</html>
